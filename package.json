@@ -1,0 +1,30 @@
+{
+  "name": "simple-password-tester",
+  "version": "1.0.0",
+  "description": "A lightweight simple library for scoring passwords",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodeunit test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/medic/simple-password-tester.git"
+  },
+  "keywords": [
+    "password",
+    "strength",
+    "check",
+    "test",
+    "simple",
+    "lightweight"
+  ],
+  "author": "Gareth Bowen <gareth@bowenwebdesign.co.nz>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/medic/simple-password-tester/issues"
+  },
+  "homepage": "https://github.com/medic/simple-password-tester#readme",
+  "devDependencies": {
+    "nodeunit": "^0.11.1"
+  }
+}

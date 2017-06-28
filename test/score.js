@@ -27,19 +27,19 @@ exports['accepts unicode characters in passwords'] = test => {
   test.done();
 };
 
-goodPasswords.forEach(pass => {
-  exports[`accepts "good" password: ${pass}`] = test => {
-    test.ok(service(pass) > passScore);
-    test.done();
-  };
-});
+exports['accepts "good" passwords'] = test => {
+  const failures = goodPasswords.filter(pass => service(pass) < passScore);
+  test.equal(failures.length, 0, `These passwords should have passed: ${failures}`);
+  test.done();
+};
 
-commonPasswords.forEach(pass => {
-  if (commonPasswordsToIgnore.indexOf(pass) !== -1) {
-    return;
-  }
-  exports[`rejects common password: ${pass}`] = test => {
-    test.ok(service(pass) < passScore);
-    test.done();
-  };
-});
+exports['rejects common passwords'] = test => {
+  const passes = commonPasswords.filter(pass => {
+    if (commonPasswordsToIgnore.indexOf(pass) !== -1) {
+      return false;
+    }
+    return service(pass) >= passScore;
+  });
+  test.equal(passes.length, 0, `These passwords should not have passed: ${passes}`);
+  test.done();
+};

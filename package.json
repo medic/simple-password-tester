@@ -19,7 +19,7 @@
     "lightweight"
   ],
   "author": "Gareth Bowen <gareth@bowenwebdesign.co.nz>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/medic/simple-password-tester/issues"
   },
